@@ -15,20 +15,24 @@ mkdir -p paper_outputs/figures
 mkdir -p data/processed
 
 echo ""
-echo "[1/4] Data preparation ..."
+echo "[1/5] Data preparation ..."
 python src/python/01_data_prep.py
 
 echo ""
-echo "[2/4] NMK ASCM estimation (tables 1–3, figures 1–4) ..."
+echo "[2/5] NMK ASCM estimation (tables 1–3, figures 1–4) ..."
 python src/python/02_ascm_estimation.py
 
 echo ""
-echo "[3/4] Cross-country estimation (table 4, figures 5–8) ..."
+echo "[3/5] Cross-country estimation (table 4, figures 5–8) ..."
 python src/python/03_cross_country.py
 
 echo ""
-echo "[4/4] Inference: LOO + placebo in space + placebo in time ..."
+echo "[4/5] Inference: LOO + placebo in space + placebo in time ..."
 python src/python/04_inference.py
+
+echo ""
+echo "[5/5] Sensitivity: donor-pool + predictor/specification checks ..."
+python src/python/05_sensitivity.py
 
 echo ""
 echo " Pipeline complete."
